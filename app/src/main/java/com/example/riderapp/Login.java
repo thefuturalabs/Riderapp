@@ -24,7 +24,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class login extends AppCompatActivity {
+public class Login extends AppCompatActivity {
     EditText username,password;
     Button login;
     TextView register;
@@ -43,19 +43,19 @@ public class login extends AppCompatActivity {
         password=findViewById(R.id.password);
         login=findViewById(R.id.button);
         register=findViewById(R.id.textView);
-        sp=getSharedPreferences("login",MODE_PRIVATE);
+        sp=getSharedPreferences("Login",MODE_PRIVATE);
         login_id=sp.getString("login_type", "");
         login_type=sp.getString("login_type","");
         if (login_type.equals("1"))
         {
-            Intent intent=new Intent(login.this,Homeview.class);
+            Intent intent=new Intent(Login.this, HomeView.class);
             startActivity(intent);
         }
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent=new Intent(login.this,register.class);
+                Intent intent=new Intent(Login.this, Register.class);
                 startActivity(intent);
             }
         });
@@ -67,17 +67,17 @@ public class login extends AppCompatActivity {
                 spassword=password.getText().toString().trim();
                 if (username.equals(""))
                 {
-                    Toast.makeText(login.this, "Username Require", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Username Require", Toast.LENGTH_SHORT).show();
                 }
                 else if (password.equals(""))
                 {
-                    Toast.makeText(login.this, "Password Require", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Password Require", Toast.LENGTH_SHORT).show();
                 }
 
                 else
                 {
                     String base_url=getResources().getString(R.string.base_url);
-                    String url=base_url+"login.php";
+                    String url=base_url+"Login.php";
 
                     Log.e("url",url);
 
@@ -99,9 +99,9 @@ public class login extends AppCompatActivity {
                                 success = response.getInt("success");
 
                                 if (success == 1) {
-                                    Toast.makeText(login.this, "success", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Login.this, "success", Toast.LENGTH_SHORT).show();
 
-                                    Intent intent = new Intent(login.this, Homeview.class);
+                                    Intent intent = new Intent(Login.this, HomeView.class);
                                     startActivity(intent);
                                     finish();
 

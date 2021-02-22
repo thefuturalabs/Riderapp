@@ -8,7 +8,7 @@
     android:background="@color/white"
     app:layout_constraintBottom_toTopOf="parent"
     android:orientation="vertical"
-    tools:context=".Homeview"
+    tools:context=".HomeView"
     >
 
     <androidx.viewpager.widget.ViewPager

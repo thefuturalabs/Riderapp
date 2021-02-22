@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-public class splash extends AppCompatActivity {
+public class Splash extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class splash extends AppCompatActivity {
                     sleep(1*1000);
 
 
-                    Intent i=new Intent(getBaseContext(),login.class);
+                    Intent i=new Intent(getBaseContext(), Login.class);
                     startActivity(i);
 
 

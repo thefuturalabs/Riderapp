@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 
-public class Homeview extends AppCompatActivity {
+public class HomeView extends AppCompatActivity {
     TabLayout tabLayout;
 
 
