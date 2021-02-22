@@ -12,12 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Riderapp">
-        <activity android:name=".Trippdetails"></activity>
-        <activity android:name=".postview" />
-        <activity android:name=".Homeview" />
-        <activity android:name=".register" />
-        <activity android:name=".login" />
-        <activity android:name=".splash">
+        <activity android:name=".TripDetails"></activity>
+        <activity android:name=".PostView" />
+        <activity android:name=".HomeView" />
+        <activity android:name=".Register" />
+        <activity android:name=".Login" />
+        <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

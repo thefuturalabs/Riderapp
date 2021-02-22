@@ -24,7 +24,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class register extends AppCompatActivity {
+public class Register extends AppCompatActivity {
     EditText name, address, mobile, email, password;
     TextView login;
     Button register;
@@ -45,7 +45,7 @@ public class register extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(register.this, login.class);
+                Intent intent = new Intent(Register.this, Login.class);
                 startActivity(intent);
             }
         });
@@ -64,28 +64,28 @@ public class register extends AppCompatActivity {
 
                 if (sname.equals(""))
                 {
-                    Toast.makeText(register.this, "Enter name", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Register.this, "Enter name", Toast.LENGTH_SHORT).show();
                 }
                 else if (saddress.equals(""))
                 {
-                    Toast.makeText(register.this, "enter address", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Register.this, "enter address", Toast.LENGTH_SHORT).show();
                 }
                 else if (!smobile.matches(mobilePattern))
                 {
-                    Toast.makeText(register.this, "enter mobile", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Register.this, "enter mobile", Toast.LENGTH_SHORT).show();
                 }
               else if (semail.matches(emailPattern))
               {
-                   Toast.makeText(register.this, "enter email", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(Register.this, "enter email", Toast.LENGTH_SHORT).show();
                }
                 else if (spassword.equals(""))
                 {
-                    Toast.makeText(register.this, "enter password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Register.this, "enter password", Toast.LENGTH_SHORT).show();
                 }
 
                 else {
                     String base_url = getResources().getString(R.string.base_url);
-                    String url = base_url + "register.php";
+                    String url = base_url + "Register.php";
 
 
                     Log.e("g",url);
@@ -110,9 +110,9 @@ public class register extends AppCompatActivity {
                                 int success = response.getInt("success");
 
                                 if (success == 1) {
-                                    Toast.makeText(register.this, "Register successfully", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Register.this, "Register successfully", Toast.LENGTH_SHORT).show();
                                 } else {
-                                    Toast.makeText(register.this, "Register feild", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Register.this, "Register feild", Toast.LENGTH_SHORT).show();
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();
