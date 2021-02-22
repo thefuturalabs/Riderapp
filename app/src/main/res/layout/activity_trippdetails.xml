@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tripp"
+    tools:context=".Trippdetails">
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="410dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="612dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#FFC107"
+            app:tabTextColor="@color/black">
+
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabl1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/tripp"
+                android:text="tripp"
+
+                />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabl2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@android:drawable/ic_menu_mylocation"
+                android:text="map"
+
+                />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabl3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/locationgps"
+                android:text="gps" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabl4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/alert"
+                android:text="alert" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="326dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="174dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="472dp"
+        android:fontFamily="@font/audiowide"
+        android:text="TRIPP DISCRIPTION"
+        android:textColor="@color/purple_500"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="146dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="278dp"
+        android:layout_marginEnd="235dp"
+        android:layout_marginBottom="419dp"
+        android:text="PLANING "
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="104dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="345dp"
+        android:layout_marginEnd="277dp"
+        android:layout_marginBottom="357dp"
+        android:text="Mileage"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="104dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="385dp"
+        android:layout_marginEnd="277dp"
+        android:layout_marginBottom="317dp"
+        android:text="Stay"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="104dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="428dp"
+        android:layout_marginEnd="277dp"
+        android:layout_marginBottom="273dp"
+        android:text="Hotal Details"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="104dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="473dp"
+        android:layout_marginEnd="277dp"
+        android:layout_marginBottom="229dp"
+        android:text="Food Details"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
