@@ -48,7 +48,7 @@ public class login extends AppCompatActivity {
         login_type=sp.getString("login_type","");
         if (login_type.equals("1"))
         {
-            Intent intent=new Intent(login.this,Homeview.class);
+            Intent intent=new Intent(login.this,Home.class);
             startActivity(intent);
         }
         register.setOnClickListener(new View.OnClickListener() {
@@ -101,13 +101,13 @@ public class login extends AppCompatActivity {
                                 if (success == 1) {
                                     Toast.makeText(login.this, "success", Toast.LENGTH_SHORT).show();
 
-                                    Intent intent = new Intent(login.this, Homeview.class);
+                                    Intent intent = new Intent(login.this, Home.class);
                                     startActivity(intent);
                                     finish();
 
                                     SharedPreferences.Editor editor = sp.edit();
-                                    editor.putString("login_id", response.getString("login_id"));
-                                    editor.putString("login_type", response.getString("login_type"));
+                                    editor.putString("login_id", response.getString("Login_id"));
+                                    editor.putString("login_type", response.getString("Role"));
                                     editor.commit();
 
                                 }
