@@ -216,7 +216,7 @@
 
  <Button
      android:id="@+id/textView8"
-     android:layout_width="221dp"
+     android:layout_width="206dp"
      android:layout_height="36dp"
      android:layout_marginStart="103dp"
      android:layout_marginTop="540dp"

@@ -123,7 +123,7 @@ public class postview extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 UploadPost();
-                Toast.makeText(postview.this, "successfully", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(postview.this, "successfully", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -169,7 +169,6 @@ public class postview extends AppCompatActivity {
         bitmap.compress(Bitmap.CompressFormat.JPEG,100,stream);
         byte[] imageBytes= stream.toByteArray();
         encodedImage=android.util.Base64.encodeToString(imageBytes, Base64.DEFAULT);
-        Toast.makeText(this, encodedImage, Toast.LENGTH_SHORT).show();
         Log.e("img",encodedImage);
     }
 
