@@ -5,21 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Home">
+    tools:context=".chatpage">
 
     <ListView
-        android:id="@+id/list"
+        android:id="@+id/list1"
         android:layout_width="411dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteY="6dp" />
+        app:layout_constraintVertical_bias="0.89" />
 
-
-<ImageButton
-        android:id="@+id/imageButtonc"
+    <ImageButton
+        android:id="@+id/chat1"
         android:layout_width="136dp"
         android:layout_height="80dp"
         android:layout_gravity="bottom"
@@ -31,7 +31,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/home1"
         android:layout_width="137dp"
         android:layout_height="80dp"
         android:layout_gravity="bottom"
@@ -43,7 +43,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
-        android:id="@+id/imageButtonp"
+        android:id="@+id/post1"
         android:layout_width="136dp"
         android:layout_height="80dp"
         android:layout_gravity="bottom"
@@ -90,7 +90,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/homeicon" />
 
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="339dp"
+        android:layout_marginTop="557dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="118dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

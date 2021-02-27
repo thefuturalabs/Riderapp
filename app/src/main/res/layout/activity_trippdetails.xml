@@ -8,63 +8,22 @@
     tools:context=".Trippdetails">
 
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="410dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="612dp"
-        android:layout_marginEnd="1dp"
+    <!-- <TextView
+        android:id="@+id/textView2"
+        android:layout_width="146dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="278dp"
+        android:layout_marginEnd="235dp"
+        android:layout_marginBottom="419dp"
+        android:text="PLANING "
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">>
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tablayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="#FFC107"
-            app:tabTextColor="@color/black">
-
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tabl1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/tripp"
-                android:text="tripp"
-
-                />
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tabl2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@android:drawable/ic_menu_mylocation"
-                android:text="map"
-
-                />
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tabl3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/locationgps"
-                android:text="gps" />
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tabl4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:icon="@drawable/alert"
-                android:text="alert" />
-
-        </com.google.android.material.tabs.TabLayout>
-
-
-    </androidx.viewpager.widget.ViewPager>
+        app:layout_constraintTop_toTopOf="parent" />-->
 
     <TextView
         android:id="@+id/textView1"
@@ -81,25 +40,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="146dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="278dp"
-        android:layout_marginEnd="235dp"
-        android:layout_marginBottom="419dp"
-        android:text="PLANING "
-        android:textColor="@color/white"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView3"
@@ -143,7 +87,7 @@
         android:layout_marginTop="428dp"
         android:layout_marginEnd="277dp"
         android:layout_marginBottom="273dp"
-        android:text="Hotal Details"
+        android:text="Food Details"
         android:textColor="@color/white"
         android:textSize="18dp"
         android:textStyle="bold"
@@ -160,7 +104,7 @@
         android:layout_marginTop="473dp"
         android:layout_marginEnd="277dp"
         android:layout_marginBottom="229dp"
-        android:text="Food Details"
+        android:text="Discription"
         android:textColor="@color/white"
         android:textSize="18dp"
         android:textStyle="bold"
@@ -168,6 +112,78 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/call"
+        android:layout_width="136dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:layout_marginEnd="1dp"
+        android:background="@color/purple_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/location"
+        android:layout_width="137dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:layout_marginEnd="274dp"
+        android:background="@color/purple_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/logout"
+        android:layout_width="136dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:background="@color/purple_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="33dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="329dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/call" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="34dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="189dp"
+        android:layout_marginEnd="188dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/logout"/>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="52dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginEnd="316dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/location" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

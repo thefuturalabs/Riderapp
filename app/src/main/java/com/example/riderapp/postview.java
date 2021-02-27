@@ -65,20 +65,21 @@ public class postview extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_postview);
 
-        date= (TextView) findViewById(R.id.textView8);
+        date = (TextView) findViewById(R.id.textView8);
 
         sp=getSharedPreferences("login",MODE_PRIVATE);
         login_id=sp.getString("login_id","");
         login_type=sp.getString("login_type","");
 
-        home=findViewById(R.id.imageButton1);
-        post=findViewById(R.id.imageButton2);
+        home=findViewById(R.id.imageButtonh1);
+        post=findViewById(R.id.imageButtonp1);
         camarabtn=findViewById(R.id.imageButton);
         discription=findViewById(R.id.editTextTextPersonName);
         mileage=findViewById(R.id.editTextTextPersonName1);
         stay=findViewById(R.id.editTextTextPersonName3);
         food=findViewById(R.id.editTextTextPersonName2);
         submit=findViewById(R.id.button2);
+        chat=findViewById(R.id.imageButtonc1);
 
 
 
@@ -127,6 +128,15 @@ public class postview extends AppCompatActivity {
             }
         });
 
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(postview.this,chatpage.class);
+                startActivity(intent);
+
+            }
+        });
+
 
 
         home.setOnClickListener(new View.OnClickListener() {
@@ -144,6 +154,8 @@ public class postview extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

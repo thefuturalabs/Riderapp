@@ -5,67 +5,63 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class Home extends AppCompatActivity {
+public class chatpage extends AppCompatActivity {
     ImageButton home,post,chat;
+    FloatingActionButton flot;
 
     SharedPreferences sf;
-    String login_id;
+    String chat_id;
     String login_type;
-    SharedPreferences sp;
 
-    ListView list;
+    ListView list1;
 
-    adapter adapter1;
-    model m;
-    public static ArrayList<model> model1ArrayList=new ArrayList<>();
-
-
+    chatadapter adapter1;
+    chatmodel m;
+    public static ArrayList<chatmodel> modelArrayList=new ArrayList<chatmodel>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        sp=getSharedPreferences("user_login",MODE_PRIVATE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-        home=findViewById(R.id.imageButton);
-        post=findViewById(R.id.imageButtonp);
-        chat=findViewById(R.id.imageButtonc);
+        setContentView(R.layout.activity_chatpage);
 
-        list=findViewById(R.id.list);
-        adapter1=new adapter(this,model1ArrayList);
+       home=findViewById(R.id.home1);
+       post=findViewById(R.id.post1);
+       chat=findViewById(R.id.chat1);
+       flot=findViewById(R.id.floatingActionButton);
+       list1=findViewById(R.id.list1);
 
+        adapter1=new chatadapter(this,modelArrayList);
         getShops();
 
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(Home.this,Home.class);
-                startActivity(intent);
-            }
-        });
+       home.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent=new Intent(chatpage.this,Home.class);
+               startActivity(intent);
+           }
+       });
 
         post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent = new Intent(Home.this,postview.class);
+                Intent intent=new Intent(chatpage.this,postview.class);
                 startActivity(intent);
             }
         });
@@ -73,45 +69,51 @@ public class Home extends AppCompatActivity {
         chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Home.this,chatpage.class);
+                Intent intent=new Intent(chatpage.this,Home.class);
                 startActivity(intent);
-
             }
         });
 
+        flot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(chatpage.this,chatsend.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void getShops() {
 
         String BASE_URL="http://192.168.29.149/ride_php/";
-        String GET_SHOPS_URL=BASE_URL+"viewdetails.php";
+        String GET_SHOPS_URL=BASE_URL+"chatdesignpage.php";
 
         JsonArrayRequest arrayRequest=new JsonArrayRequest(GET_SHOPS_URL, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
-                model1ArrayList.clear();
+                Log.e("res", String.valueOf(response));
+
+                modelArrayList.clear();
                 for (int i = 0; i < response.length(); i++)
                 {
                     try {
                         JSONObject json = response.getJSONObject(i);
-                        String postid = json.getString("post_id");
-                        String loginid=json.getString("Login_id");
-                        String discription = json.getString("Discription");
-                        String bikemileage = json.getString("Bikemileage");
-                        String food = json.getString("Food");
-                        String Date = json.getString("date");
-                        String img = json.getString("Post_img");
-                        String stay = json.getString("Stay");
+                        String chatid= json.getString("Chat_id");
+                        String massage=json.getString("Massage");
+                        String loginid = json.getString("Login_id");
+                        String replay = json.getString("Replay");
+                        String senddate = json.getString("Send_date");
+                        String replaydate = json.getString("Replay_date");
 
                         //Toast.makeText(CustomerViewShopsActivity.this, reg_id, Toast.LENGTH_SHORT).show();
 
                         //Toast.makeText(CustomerViewShopsActivity.this, login_idd, Toast.LENGTH_SHORT).show();
 
-                        m=new model(discription,bikemileage,stay,food,Date,img,postid,login_id);
-                        model1ArrayList.add(m);
+                        m=new chatmodel(massage,loginid,replay,senddate,replaydate,chatid);
+                        modelArrayList.add(m);
                         adapter1.notifyDataSetChanged();
-                        list.setAdapter(adapter1);
+                        list1.setAdapter(adapter1);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

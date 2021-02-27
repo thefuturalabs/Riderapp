@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
@@ -12,7 +13,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="268dp"
-        android:background="@color/purple_500"
+        android:background="@drawable/noimg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,8 +25,8 @@
         android:layout_marginStart="162dp"
         android:layout_marginTop="19dp"
         android:layout_marginEnd="142dp"
-        android:background="@color/purple_500"
-        android:hint="Mileage"
+        android:background="#EFB70F"
+        android:hint="Kilometer"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +39,7 @@
         android:layout_marginStart="288dp"
         android:layout_marginTop="19dp"
         android:layout_marginEnd="16dp"
-        android:background="@color/purple_500"
+        android:background="#EFB70F"
         android:hint="Stay"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,7 +53,7 @@
         android:layout_marginStart="288dp"
         android:layout_marginTop="62dp"
         android:layout_marginEnd="16dp"
-        android:background="@color/purple_500"
+        android:background="#EFB70F"
         android:hint="Food"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +67,7 @@
         android:layout_marginStart="162dp"
         android:layout_marginTop="62dp"
         android:layout_marginEnd="142dp"
-        android:background="@color/purple_500"
+        android:background="#EFB70F"
         android:hint="Date"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +81,7 @@
         android:layout_marginStart="161dp"
         android:layout_marginTop="107dp"
         android:layout_marginEnd="17dp"
-        android:background="@color/purple_500"
+        android:background="#EFB70F"
         android:hint="Discription"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,7 +96,7 @@
         android:layout_marginTop="107dp"
         android:layout_marginEnd="17dp"
         android:layout_marginBottom="590dp"
-        android:background="@color/purple_500"
+        android:background="#EFB70F"
         android:hint="Discription"
         android:textAlignment="center"
         android:visibility="gone"
@@ -114,7 +115,7 @@
         android:layout_marginTop="107dp"
         android:layout_marginEnd="17dp"
         android:layout_marginBottom="590dp"
-        android:background="@color/purple_500"
+        android:background="#EFB70F"
         android:hint="Discription"
         android:textAlignment="center"
         android:visibility="gone"
@@ -128,10 +129,11 @@
         android:layout_width="233dp"
         android:layout_height="35dp"
         android:layout_marginStart="161dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="148dp"
         android:layout_marginEnd="17dp"
         android:text="join"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -150,33 +152,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />-->
 
-    <ImageButton
-        android:id="@+id/like"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="156dp"
-        android:layout_marginEnd="365dp"
-        android:layout_marginBottom="545dp"
-        android:background="@mipmap/like"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/coment"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="113dp"
-        android:layout_marginTop="156dp"
-        android:layout_marginEnd="268dp"
-        android:layout_marginBottom="545dp"
-        android:background="@mipmap/commet"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

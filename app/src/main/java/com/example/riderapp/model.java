@@ -17,6 +17,9 @@ public class model {
         this.login_id = login_id;
     }
 
+    public model(String massage, String loginid, String replay, String senddate, String replaydate, String chatid, String chat_id) {
+    }
+
     public String getDiscription() {
         return discription;
     }

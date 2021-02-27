@@ -1,6 +1,7 @@
 package com.example.riderapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +34,7 @@ public class adapter extends ArrayAdapter<model> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.homedesign, null,true);
 
-
+        Button join;
 
         ImageView image = view.findViewById(R.id.image);
         TextView bikemileage = view.findViewById(R.id.Bikemileage);
@@ -43,7 +44,19 @@ public class adapter extends ArrayAdapter<model> {
         TextView discription = view.findViewById(R.id.sdiscription);
         TextView login_id=view.findViewById(R.id.login_id);
         TextView post_id=view.findViewById(R.id.post_id);
-        Button join = view.findViewById(R.id.join);
+        join = view.findViewById(R.id.join);
+
+        join.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,Trippdetails.class);
+                intent.putExtra("bikemileage", "Bikemileage");
+                intent.putExtra("stay", "stay");
+                intent.putExtra("food", "food");
+                intent.putExtra("discription", "discription");
+                context.startActivity(intent);
+            }
+        });
 
         discription.setText(arrayhomedesign.get(position).getDiscription());
         bikemileage.setText(arrayhomedesign.get(position).getBikemilage());
