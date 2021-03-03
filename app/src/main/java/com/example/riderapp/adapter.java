@@ -50,13 +50,13 @@ public class adapter extends ArrayAdapter<model> {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,Trippdetails.class);
-                intent.putExtra("bikemileage", "Bikemileage");
-                intent.putExtra("stay", "stay");
-                intent.putExtra("food", "food");
-                intent.putExtra("discription", "discription");
+                intent.putExtra("kilometer", arrayhomedesign.get(position).getBikemilage());
+                intent.putExtra("stay", arrayhomedesign.get(position).getStay());
+                intent.putExtra("food", arrayhomedesign.get(position).getFood());
+                intent.putExtra("discription", arrayhomedesign.get(position).getDiscription());
                 context.startActivity(intent);
             }
-        });
+        }); 
 
         discription.setText(arrayhomedesign.get(position).getDiscription());
         bikemileage.setText(arrayhomedesign.get(position).getBikemilage());
@@ -66,7 +66,6 @@ public class adapter extends ArrayAdapter<model> {
         login_id.setText(arrayhomedesign.get(position).getLogin_id());
         post_id.setText(arrayhomedesign.get(position).getPost_id());
         Glide.with(view.getContext()).load(arrayhomedesign.get(position).getImage()).into(image);
-
         return view;
 
     }

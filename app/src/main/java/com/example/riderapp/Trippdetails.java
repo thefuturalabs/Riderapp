@@ -24,38 +24,50 @@ import java.net.URI;
 
 public class Trippdetails extends AppCompatActivity {
     ImageButton location,logout,call;
-    TextView mileage,stay,fooddetails,discription;
+    TextView kilometer,stay,fooddetails,discription;
     SharedPreferences sp;
 
+    String kilo,st,food,desc;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trippdetails);
 
-        sp=getSharedPreferences("user_login",MODE_PRIVATE);
+        sp=getSharedPreferences("login",MODE_PRIVATE);
 
         location=findViewById(R.id.location);
         logout=findViewById(R.id.logout);
         call=findViewById(R.id.call);
 
 
-        mileage=findViewById(R.id.textView3);
-        stay=findViewById(R.id.textView4);
-        fooddetails=findViewById(R.id.textView5);
-        discription=findViewById(R.id.textView6);
+        kilometer=findViewById(R.id.kilometer);
+        stay=findViewById(R.id.stay);
+        fooddetails=findViewById(R.id.fooddetails);
+        discription=findViewById(R.id.discription);
+
+        Intent intent=getIntent();
+        kilo=intent.getStringExtra("kilometer");
+        st=intent.getStringExtra("stay");
+        food=intent.getStringExtra("food");
+        desc=intent.getStringExtra("discription");
+
+        kilometer.setText(kilo);
+        stay.setText(st);
+        fooddetails.setText(food);
+        discription.setText(desc);
 
 
-        String s=getIntent().getStringExtra("bikemileage");
-        mileage.setText(s);
+       /* String s=getIntent().getStringExtra("kilometer");
+        kilometer.setText(s);
 
         String s1=getIntent().getStringExtra("stay");
         stay.setText(s1);
 
         String s2=getIntent().getStringExtra("food");
-        mileage.setText(s2);
+        fooddetails.setText(s2);
 
         String s3=getIntent().getStringExtra("discription");
-        mileage.setText(s3);
+        discription.setText(s3);*/
 
 
 
@@ -65,6 +77,7 @@ public class Trippdetails extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("geo:10.850516,76.271080"));
                 Intent chooser= Intent.createChooser(intent,"Lauch map");
+                Toast.makeText(Trippdetails.this, "Location Loading", Toast.LENGTH_SHORT).show();
                 startActivity(chooser);
 
             }
@@ -77,7 +90,9 @@ public class Trippdetails extends AppCompatActivity {
                 editor.clear();
                 editor.apply();
                 Intent intent=new Intent(getApplicationContext(),register.class);
+                Toast.makeText(Trippdetails.this, "Logout", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
+                finish();
             }
         });
 

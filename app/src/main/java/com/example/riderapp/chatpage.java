@@ -27,6 +27,7 @@ public class chatpage extends AppCompatActivity {
     FloatingActionButton flot;
 
     SharedPreferences sf;
+
     String chat_id;
     String login_type;
 
@@ -81,7 +82,8 @@ public class chatpage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
+
+           }
 
     private void getShops() {
 

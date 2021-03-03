@@ -11,12 +11,14 @@ import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -25,6 +27,7 @@ import java.util.ArrayList;
 
 public class Home extends AppCompatActivity {
     ImageButton home,post,chat;
+    FloatingActionButton logout;
 
     SharedPreferences sf;
     String login_id;
@@ -41,12 +44,13 @@ public class Home extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        sp=getSharedPreferences("user_login",MODE_PRIVATE);
+        sp=getSharedPreferences("login",MODE_PRIVATE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         home=findViewById(R.id.imageButton);
         post=findViewById(R.id.imageButtonp);
         chat=findViewById(R.id.imageButtonc);
+        logout=findViewById(R.id.floatingActionButton2);
 
         list=findViewById(R.id.list);
         adapter1=new adapter(this,model1ArrayList);
@@ -74,6 +78,19 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(Home.this,chatpage.class);
+                startActivity(intent);
+
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                SharedPreferences.Editor editor = sp.edit();
+                editor.clear();
+                editor.commit();
+                Intent intent = new Intent(Home.this,login.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 
             }
